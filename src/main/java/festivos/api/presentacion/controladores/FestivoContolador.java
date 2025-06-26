@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import festivos.api.core.dominio.entidades.Festivo;
@@ -21,11 +20,6 @@ public class FestivoContolador {
 
     public FestivoContolador(IFestivoServicio servicio) {
         this.servicio = servicio;
-    }
-
-    @RequestMapping(value = "/listar", method = RequestMethod.GET)
-    public List<Festivo> listar() {
-        return servicio.listar();
     }
 
     @GetMapping("/listar/{año}")

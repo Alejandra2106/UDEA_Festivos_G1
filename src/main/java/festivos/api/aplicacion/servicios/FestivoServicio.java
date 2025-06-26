@@ -20,11 +20,6 @@ public class FestivoServicio implements IFestivoServicio {
         this.repositorio = repositorio;
     }
 
-    @Override
-    public List<Festivo> listar() {
-        return repositorio.findAll();
-    }
-
     public static LocalDate getInicioSemanaSanta(int año) {
         int a = año % 19;
         int b = año % 4;
