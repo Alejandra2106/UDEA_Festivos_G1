@@ -14,22 +14,17 @@ public class Tipo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "tipo_id_seq")
-    @SequenceGenerator(name="tipo_id_seq", sequenceName = "tipo_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "tipo_id_seq", sequenceName = "tipo_id_seq", allocationSize = 1)
     @Column(name = "id")
     private int id;
     @Column(name = "tipo", length = 100, unique = true)
     private String tipo;
-    
-    public Tipo(int id, String tipo) {
-        this.id = id;
+
+    public Tipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    public Tipo() {
-    }
 
-    public int getId() {
-        return id;
+    public Tipo() {
     }
 
     public void setId(int id) {
@@ -44,5 +39,4 @@ public class Tipo {
         this.tipo = tipo;
     }
 
-    
 }

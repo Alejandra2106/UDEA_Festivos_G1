@@ -16,7 +16,7 @@ public class Festivo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "festivo_id_seq")
-    @SequenceGenerator(name="festivo_id_seq", sequenceName = "festivo_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "festivo_id_seq", sequenceName = "festivo_id_seq", allocationSize = 1)
     @Column(name = "id")
     private int id;
     @Column(name = "nombre", length = 100, unique = true)
@@ -30,25 +30,16 @@ public class Festivo {
     @ManyToOne
     @JoinColumn(name = "idtipo", referencedColumnName = "id", nullable = false)
     private Tipo tipo;
-    
-    public Festivo(int id, String nombre, int dia, int mes, int diaspascua, Tipo tipo) {
-        this.id = id;
+
+    public Festivo(String nombre, int dia, int mes, int diaspascua, Tipo tipo) {
         this.nombre = nombre;
         this.dia = dia;
         this.mes = mes;
         this.diaspascua = diaspascua;
         this.tipo = tipo;
     }
-    
+
     public Festivo() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -74,12 +65,9 @@ public class Festivo {
     public void setMes(int mes) {
         this.mes = mes;
     }
+
     public int getDiasPascua() {
         return diaspascua;
-    }
-
-    public void setDiasPascua(int diaspascua) {
-        this.diaspascua = diaspascua;
     }
 
     public Tipo getTipo() {
@@ -89,5 +77,5 @@ public class Festivo {
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
-    
+
 }

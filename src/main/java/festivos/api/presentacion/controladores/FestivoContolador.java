@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import festivos.api.core.dominio.DTOs.FestivoResponseDTO;
 import festivos.api.core.dominio.entidades.Festivo;
 import festivos.api.core.interfaces.servicios.IFestivoServicio;
 
@@ -29,7 +30,7 @@ public class FestivoContolador {
     }
 
     @GetMapping("/listar/{año}")
-    public List<Festivo> ListarPorAño(@PathVariable int año) {
+    public List<FestivoResponseDTO> ListarPorAño(@PathVariable int año) {
         return servicio.ListarPorAño(año);
     }
 
